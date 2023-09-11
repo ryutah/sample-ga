@@ -1,4 +1,5 @@
 name: CI
+concurrency: sample-concurrency
 on:
   push:
   workflow_dispatch:
