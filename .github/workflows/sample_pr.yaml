@@ -1,13 +1,13 @@
 name: sample-pr
-concurrency: sample-concurrency
 on:
   pull_request:
 jobs:
   build:
-    environment:
-      name: test
-      url: https://github.com/ryutah/sample-ga/settings/environments/1307982831/edit
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: gh command existance checkk
         run: gh --help
+      - name: adds pr comments
+        run: gh pr comment ${{ github.event.pull_request.html_url  }} --body '## Test Comment!!!'
