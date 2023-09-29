@@ -1,0 +1,13 @@
+name: sample-pr
+concurrency: sample-concurrency
+on:
+  pull_request:
+jobs:
+  build:
+    environment:
+      name: test
+      url: https://github.com/ryutah/sample-ga/settings/environments/1307982831/edit
+    runs-on: ubuntu-latest
+    steps:
+      - name: gh command existance checkk
+        run: gh --help
